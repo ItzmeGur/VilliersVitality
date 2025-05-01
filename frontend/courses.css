@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgb(19, 36, 96);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+/* Logo & Tagline */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(177, 31, 54);
+    user-select: none;
+}
+
+.tagline {
+    font-size: 0.8em; 
+    font-weight: 400; 
+    color: white; 
+    margin-top: -5px; 
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.navigation a {
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    margin: 0 15px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Club item box style */
+.club-item {
+    display: inline-block;
+    width: 280px;
+    min-height: 100px;
+    padding: 20px 25px;
+    margin: 12px;
+    border-radius: 10px;
+    background-color: #f5f7fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    color: rgb(19, 36, 96);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    vertical-align: top;
+}
+
+.club-item:hover {
+    background-color: #e0e6f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.club-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Join button style */
+.club-item button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(177, 31, 54);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.club-item button:hover {
+    background-color: rgb(150, 25, 40);
+}
+
+/* Space between My Clubs and Available Clubs sections */
+#my-clubs-list {
+    margin-bottom: 30px;
+}
+
+/* Align club lists to the left */
+#my-clubs-list,
+#available-clubs-list {
+    text-align: left;
+}
+
+/* Override body flex alignment for main content */
+main {
+    width: 100%;
+    margin: 120px 0 40px 0; /* top margin to avoid header overlap, no horizontal centering */
+    padding: 0 20px;
+}

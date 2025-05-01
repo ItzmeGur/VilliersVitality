@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgb(19, 36, 96);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+/* Logo & Tagline */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(177, 31, 54);
+    user-select: none;
+}
+
+.tagline {
+    font-size: 0.8em; 
+    font-weight: 400; 
+    color: white; 
+    margin-top: -5px; 
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.navigation a {
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    margin: 0 15px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+/* LOGIN SECTION */
+.login-container {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: rgb(3, 47, 142);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background: rgb(2, 30, 90);
+}
+
+/* Remember Me */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    white-space: nowrap;
+}
+
+.remember-me input {
+    width: auto;
+    margin: 0;
+}
+
+/* Links */
+.login-container a {
+    text-decoration: none;
+    color: rgb(3, 47, 142);
+    font-weight: 500;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Forgot Password & Sign-up Links */
+.login-container p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* SLIDESHOW (CROPPED FROM SIDES) */
+.slideshow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px; /* Adjusts the spacing from header */
+}
+
+.slideshow-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Cropped Slideshow */
+.slideshow-container {
+    width: 1200px;  /* Limits slideshow width to 80% of the viewport */
+    max-width: 10000000000px;  /* Ensures it doesn’t stretch too much on wide screens */
+    height: 450px;
+    position: relative;
+    overflow: hidden;  /* Hides any overflowing parts of the image */
+    margin: 0 auto;  /* Centers it on the page */
+
+    border-radius: 10px;  /* Optional: Adds rounded corners */
+}
+
+/* Slideshow Images */
+.slideshow-container img {
+    width: 100%;
+    height: 77%;
+    object-fit: cover;  /* Ensures the images are fully visible and not stretched */
+    object-position: center;  /* Centers the cropping effect */
+    position: absolute;
+    margin-top: 75px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-container img.active {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 50px;
+    }
+    
+    .navigation {
+        width: 70%;
+    }
+
+    .login-container {
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 90%;
+    }
+
+    .slideshow-container {
+        width: 95vw; /* Adjusts for smaller screens */
+        max-width: none;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#submitReset {
+    background-color: rgb(3, 47, 142);
+    color: white;
+}
+
+#submitReset:hover {
+    background-color: rgb(2, 30, 90);
+}
+
+#cancelReset {
+    background-color: #ccc;
+}
+
+#cancelReset:hover {
+    background-color: #999;
+}

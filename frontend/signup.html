@@ -1,0 +1,86 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<header>
+  <div class="logo-container"> 
+    <h2 class="logo">VilliersVitality</h2>
+    <p class="tagline"><strong>For life, not school, we learn</strong></p>
+  </div>
+  <nav class="navigation">
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="home.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About us</a>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="signup-wrapper">
+    <div class="info-panel">
+      <h3>Upcoming Events & Challenges</h3>
+      <div class="event-card">
+        <h4>🏃Spring Term Fitness Club - April 22nd</h4>
+        <p>Get moving and stay motivated! Join us every week for energizing group workouts designed to boost your fitness and mood this spring.</p>
+      </div>
+      <div class="event-card">
+        <h4>🧠 Meditation Club — Every Week</h4>
+        <p>Find your calm in the chaos. Learn breathing techniques and mindfulness skills to help you focus, relax, and feel active.
+        </p>
+      </div>
+      <div class="event-card">
+        <h4>🏏 Cricket Club Begins — May 5th</h4>
+        <p>Become as good as Virat Kohli by joining our team!</p>
+      </div>
+    </div>
+    
+    <div class="form-panel">
+      <h2>Get Started Now</h2>
+      <p> Fill in your details to create a new account.</p>
+
+      <form id="signupForm">
+        <div class="name-fields">
+          <input type="text" placeholder="First name" id="firstName">
+          <input type="text" placeholder="Last name" id="lastName">
+        </div>
+
+        <div class="email-field">
+          <input type="text" placeholder="Username" id="emailUsername">
+          <span class="email-domain">@villiers.ealing.sch.uk</span>
+        </div>
+
+        <div id="emailErrorPopup" class="email-error-popup" style="display:none;">
+          Go to admin and ask them to change password.
+        </div>
+
+        <div class="password-fields">
+<input type="password" placeholder="Enter password" id="newPassword">
+          <input type="password" placeholder="Confirm password" id="confirmPassword">
+        </div>
+
+<p class="password-tip">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+<p id="passwordStrength" class="password-strength">Password strength: </p>
+
+        <div class="show-password">
+          <input type="checkbox" id="showPassword">
+          <label for="showPassword">Show password</label>
+        </div>
+
+        <div class="actions">
+          <a href="login.html" class="signin-link">Sign in Instead</a>
+          <button type="submit">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="signup.js"></script>
+</body>
+</html>

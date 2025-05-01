@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  padding-top: 120px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgb(19, 36, 96);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 2em;
+  color: rgb(177, 31, 54);
+  user-select: none;
+}
+
+.tagline {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: white;
+  margin-top: -5px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.navigation a {
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  margin: 0 15px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Layout */
+.about-main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  gap: 20px;
+  margin-top: 20px;
+  height: calc(100vh - 120px); /* viewport height minus header height */
+  overflow: hidden;
+}
+
+.interactive-section, .about-text {
+  flex: 0.85;
+}
+
+.contact-us {
+  flex: 1.5;
+}
+
+.contact-us h2 {
+  color: rgb(19, 36, 96);
+}
+
+.interactive-section, .about-text, .contact-us {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.interactive-section {
+  /* Removed flex: 1.5 to keep equal size */
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  /* Removed flex: 1.5 to keep equal size */
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  text-align: justify;
+}
+
+.interactive-section h2 {
+  margin-bottom: 20px;
+  color: rgb(19, 36, 96);
+  font-size: 1.5rem;
+}
+
+.about-text {
+  flex: 2;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  text-align: left;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+}
+
+.contact-us {
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  text-align: left;
+}
+
+.contact-us {
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+}
+
+.about-text h1 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  color: rgb(19, 36, 96);
+  white-space: nowrap;
+}
+
+.about-text p {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+  margin-top: 30px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slideshow-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.slideshow-img.active {
+  opacity: 1;
+}
+
+/* Map Styling */
+.map-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 275px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 15px 50px;
+  }
+
+  .navigation {
+    width: 70%;
+  }
+
+  .about-main {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .interactive-section {
+    order: 1;
+  }
+
+  .about-text {
+    order: 2;
+  }
+}

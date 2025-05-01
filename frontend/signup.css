@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgb(19, 36, 96);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+/* Logo & Tagline */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(177, 31, 54);
+    user-select: none;
+}
+
+.tagline {
+    font-size: 0.8em; 
+    font-weight: 400; 
+    color: white; 
+    margin-top: -5px; 
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.navigation a {
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    margin: 0 15px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.signup-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 150px; /* Leaves space for header */
+    padding-left: 100px;
+}
+
+
+.form-panel {
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-panel h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: rgb(19, 36, 96);
+}
+
+
+.form-panel p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.name-fields,
+.password-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.email-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+.email-field input {
+    flex: 1;
+}
+
+
+.email-domain {
+    margin-left: 8px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.password-tip {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+.show-password {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.show-password label {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.actions .signin-link {
+    color: rgb(19, 36, 96);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.actions button {
+    background-color: rgb(19, 36, 96);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Right-side panel */
+.info-panel {
+    position: absolute;
+    right: 100px;
+    top: 150px;
+    width: 350px;
+    background-color: #f5f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-panel h3 {
+    font-size: 20px;
+    color: rgb(19, 36, 96);
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.event-card {
+    background-color: white;
+    border-left: 4px solid rgb(177, 31, 54);
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.event-card h4 {
+    font-size: 16px;
+    color: rgb(19, 36, 96);
+    margin-bottom: 5px;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: #333;
+}
+
+.password-strength {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    height: 18px;
+}
+
+.email-error-popup {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}

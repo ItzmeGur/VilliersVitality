@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Villiers Vitality - Events</title>
+  <link rel="stylesheet" href="events.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <h2 class="logo">VilliersVitality</h2>
+      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+    </div>
+    <nav class="navigation">
+      <a href="home.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a class="active" href="events.html">Events</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    <section class="calendar-section">
+      <h1>Events Calendar</h1>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prevMonth"><</button>
+          <h2 id="monthYear"></h2>
+          <button id="nextMonth">></button>
+        </div>
+        <table class="calendar" id="calendar">
+          <thead>
+            <tr>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody">
+            <!-- Calendar days will be generated here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="events.js"></script>
+</body>
+</html>

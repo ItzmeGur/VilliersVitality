@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villiers Vitality - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <!-- Header at the very top -->
+  <header>
+    <div class="logo-container"> 
+      <h2 class="logo">VilliersVitality</h2>
+      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+    </div>
+    <nav class="navigation">
+      <a href="login.html">Login</a>
+      <a href="home.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About us</a>
+    </nav>
+  </header>
+
+  <!-- Slideshow Section -->
+  <div class="slideshow-wrapper">
+    <!-- Slideshow Container (Images) -->
+    <div class="slideshow-container">
+      <img src="https://i.pinimg.com/736x/35/75/4b/35754b467edeab9e31fc5d6170d0d2ad.jpg" alt="Villiers Vitality Image 1">
+      <img src="https://i.pinimg.com/736x/e7/91/6f/e7916f6f70a8b7c3215256b24697d8e3.jpg" alt="Villiers Vitality Image 2">
+      <img src="https://i.pinimg.com/736x/c3/75/83/c3758350ab036f375235d97c17cbbb1d.jpg" alt="Villiers Vitality Image 3">
+    </div>
+
+    <!-- Slideshow Title BELOW the images -->
+    <h2 class="slideshow-title">Demo Images Slideshow - Villiers High School</h2>
+  </div>
+
+  <!-- Login Box on the Right -->
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username...">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+    <div class="remember-me">
+      <input type="checkbox" id="remember">
+      <label for="remember">Remember me</label>
+    </div>
+<p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <h2>Reset Password</h2>
+      <p>Please enter your email to reset your password.</p>
+      <input type="text" id="resetInput" placeholder="Email Address">
+      <div class="modal-actions">
+        <button id="submitReset">Submit</button>
+        <button id="cancelReset">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slideshow JavaScript -->
+  <script src="login.js"></script>
+</body>
+</html> 

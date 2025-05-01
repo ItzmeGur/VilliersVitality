@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Villiers Vitality - Courses</title>
+  <link rel="stylesheet" href="courses.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <h2 class="logo">VilliersVitality</h2>
+      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+    </div>
+    <nav class="navigation">
+      <a href="home.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About us</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Teacher View -->
+    <section id="teacher-view" class="dashboard hidden">
+      <div class="teacher-header">
+      </div>
+      <div id="my-classes" class="dashboard-row">
+        <!-- Teacher's classes will be dynamically inserted here -->
+      </div>
+      <div id="other-clubs" class="dashboard-row">
+        <!-- Other clubs will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <!-- Student View -->
+    <section id="student-view" class="dashboard hidden">
+      <h1>My Clubs</h1>
+      <div id="my-clubs-list" class="dashboard-row">
+        <!-- Clubs the student has joined will be dynamically inserted here -->
+      </div>
+      <h1>Available Clubs</h1>
+      <div id="available-clubs-list" class="dashboard-row">
+        <!-- Clubs available for the student to join will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="courses.js"></script>
+</body>
+</html>
