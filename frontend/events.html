@@ -1,56 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="en"> <!-- Specifies the language of the document as English -->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Villiers Vitality - Events</title>
-  <link rel="stylesheet" href="events.css" />
+  <meta charset="UTF-8" /> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures the page is responsive on mobile devices -->
+  <title>Villiers Vitality - Events</title> <!-- Sets the title of the webpage displayed on the browser tab -->
+  <link rel="stylesheet" href="events.css" /> <!-- Links the external CSS file for styling -->
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <div class="logo-container">
-      <h2 class="logo">VilliersVitality</h2>
-      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+      <h2 class="logo">VilliersVitality</h2> <!-- Displays the site logo -->
+      <p class="tagline"><strong>For life, not school, we learn</strong></p> <!-- Displays the site's tagline -->
     </div>
     <nav class="navigation">
-      <a href="home.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a class="active" href="events.html">Events</a>
-      <a href="about.html">About Us</a>
+      <a href="home.html">Home</a> <!-- Navigation link to the home page -->
+      <a href="courses.html">Courses</a> <!-- Navigation link to the courses page -->
+      <a class="active" href="events.html">Events</a> <!-- Navigation link to the events page, highlighted as active -->
+      <a href="about.html">About Us</a> <!-- Navigation link to the about us page -->
     </nav>
   </header>
 
   <!-- Main Content Container -->
   <main>
     <section class="calendar-section">
-      <h1>Events Calendar</h1>
+      <h1>Events Calendar</h1> <!-- Main title for the events calendar section -->
       <div class="calendar-container">
         <div class="calendar-header">
-          <button id="prevMonth"><</button>
-          <h2 id="monthYear"></h2>
-          <button id="nextMonth">></button>
+          <button id="prevMonth"><</button> <!-- Button to navigate to the previous month -->
+          <h2 id="monthYear"></h2> <!-- Display the current month and year -->
+          <button id="nextMonth">></button> <!-- Button to navigate to the next month -->
         </div>
-        <table class="calendar" id="calendar">
+        <table class="calendar" id="calendar"> <!-- Table structure for the calendar -->
           <thead>
-            <tr>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-          <th>Sun</th>
+            <tr> <!-- Table header for the days of the week -->
+          <th>Mon</th> 
+          <th>Tue</th> 
+          <th>Wed</th> 
+          <th>Thu</th> 
+          <th>Fri</th> 
+          <th>Sat</th> 
+          <th>Sun</th> 
             </tr>
           </thead>
           <tbody id="calendarBody">
-            <!-- Calendar days will be generated here -->
+            <!-- Calendar days will be generated here dynamically by JavaScript -->
           </tbody>
         </table>
       </div>
     </section>
   </main>
 
-  <script src="events.js"></script>
+  <script src="events.js"></script> <!-- Links the external JavaScript file for functionality -->
 </body>
+
 </html>

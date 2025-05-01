@@ -1,57 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); /* Importing Poppins font from Google Fonts */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Includes padding and border in element's total width/height */
+  font-family: 'Poppins', sans-serif; /* Sets default font for all elements */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: white;
-  padding-top: 120px;
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Children are arranged vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 100vh; /* Full viewport height minimum */
+  background-color: white; /* Page background color */
+  padding-top: 120px; /* Offset for fixed header */
 }
 
 header {
-  position: fixed;
+  position: fixed; /* Stays at the top while scrolling */
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
-  background: rgb(19, 36, 96);
+  padding: 20px 100px; /* Vertical and horizontal padding */
+  background: rgb(19, 36, 96); /* Dark blue background */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and nav */
   align-items: center;
-  z-index: 99;
+  z-index: 99; /* Keeps header above other elements */
 }
 
 .logo-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stacks logo and tagline vertically */
 }
 
 .logo {
   font-size: 2em;
-  color: rgb(177, 31, 54);
-  user-select: none;
+  color: rgb(177, 31, 54); /* Red tone for logo */
+  user-select: none; /* Prevents text selection */
 }
 
 .tagline {
   font-size: 0.8em;
   font-weight: 400;
   color: white;
-  margin-top: -5px;
+  margin-top: -5px; /* Slight upward shift to align visually */
 }
 
 .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  width: 50%; /* Takes up half of the header */
 }
 
 .navigation a {
@@ -64,7 +64,7 @@ header {
 }
 
 .navigation a::after {
-  content: '';
+  content: ''; /* Decorative underline */
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -72,12 +72,12 @@ header {
   height: 3px;
   background: white;
   border-radius: 5px;
-  transform: scaleX(0);
-  transition: transform 0.5s;
+  transform: scaleX(0); /* Hidden by default */
+  transition: transform 0.5s; /* Smooth animation */
 }
 
 .navigation a:hover::after {
-  transform: scaleX(1);
+  transform: scaleX(1); /* Show underline on hover */
 }
 
 /* Layout */
@@ -88,22 +88,22 @@ header {
   justify-content: space-between;
   width: 80%;
   max-width: 1200px;
-  gap: 20px;
+  gap: 20px; /* Space between sections */
   margin-top: 20px;
-  height: calc(100vh - 120px); /* viewport height minus header height */
+  height: calc(100vh - 120px); /* Height minus fixed header */
   overflow: hidden;
 }
 
 .interactive-section, .about-text {
-  flex: 0.85;
+  flex: 0.85; /* Relative size */
 }
 
 .contact-us {
-  flex: 1.5;
+  flex: 1.5; /* Contact section gets more space */
 }
 
 .contact-us h2 {
-  color: rgb(19, 36, 96);
+  color: rgb(19, 36, 96); /* Header color matching theme */
 }
 
 .interactive-section, .about-text, .contact-us {
@@ -112,13 +112,12 @@ header {
   flex-direction: column;
   background-color: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow-y: auto; /* Enables vertical scroll if needed */
 }
 
 .interactive-section {
-  /* Removed flex: 1.5 to keep equal size */
   background-color: white;
   padding: 30px;
   border-radius: 10px;
@@ -126,23 +125,22 @@ header {
 }
 
 .about-text {
-  /* Removed flex: 1.5 to keep equal size */
   background-color: white;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   color: #333;
-  text-align: justify;
+  text-align: justify; /* Justifies paragraph text */
 }
 
 .interactive-section h2 {
   margin-bottom: 20px;
-  color: rgb(19, 36, 96);
+  color: rgb(19, 36, 96); /* Title color */
   font-size: 1.5rem;
 }
 
 .about-text {
-  flex: 2;
+  flex: 2; /* More width than others */
   background-color: white;
   padding: 30px;
   border-radius: 10px;
@@ -170,8 +168,8 @@ header {
 .about-text h1 {
   margin-bottom: 10px;
   font-size: 2.2rem;
-  color: rgb(19, 36, 96);
-  white-space: nowrap;
+  color: rgb(19, 36, 96); /* Heading color */
+  white-space: nowrap; /* Prevents wrapping */
 }
 
 .about-text p {
@@ -186,21 +184,21 @@ header {
   height: 200px;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 10px; /* Rounded corners for slideshow */
 }
 
 .slideshow-img {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  object-fit: cover; /* Ensures image covers container */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 1s ease-in-out; /* Smooth fade */
   border-radius: 10px;
 }
 
 .slideshow-img.active {
-  opacity: 1;
+  opacity: 1; /* Visible image */
 }
 
 /* Map Styling */
@@ -216,29 +214,29 @@ header {
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: auto;
+  pointer-events: auto; /* Enables interaction with map */
 }
 
 /* Responsive */
 @media screen and (max-width: 768px) {
   header {
-    padding: 15px 50px;
+    padding: 15px 50px; /* Smaller padding on small screens */
   }
 
   .navigation {
-    width: 70%;
+    width: 70%; /* More compact nav */
   }
 
   .about-main {
-    flex-direction: column;
-    width: 90%;
+    flex-direction: column; /* Stack sections vertically */
+    width: 90%; /* More width on small screens */
   }
 
   .interactive-section {
-    order: 1;
+    order: 1; /* Reorder for mobile */
   }
 
   .about-text {
-    order: 2;
+    order: 2; /* Reorder for mobile */
   }
 }

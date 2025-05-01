@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Document type declaration -->
+<html lang="en"> <!-- Root element with language attribute -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Villiers Vitality - Dashboard</title>
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="UTF-8" /> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsive viewport -->
+  <title>Villiers Vitality - Dashboard</title> <!-- Page title -->
+  <link rel="stylesheet" href="home.css" /> <!-- Link to stylesheet -->
   <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="logo-container">
-      <h2 class="logo">VilliersVitality</h2>
-      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+      <h2 class="logo">VilliersVitality</h2> <!-- Site logo -->
+      <p class="tagline"><strong>For life, not school, we learn</strong></p> <!-- Tagline -->
     </div>
-      <nav class="navigation">
+      <nav class="navigation"> <!-- Main navigation -->
       <a href="home.html">Home</a>
       <a href="courses.html">Courses</a>
-      <a href="events.html" class="active">Events</a>
+      <a href="events.html" class="active">Events</a> <!-- Active page -->
       <a href="about.html">About Us</a>
     </nav>
   </header>
@@ -26,13 +26,13 @@
   <!-- Main Content Container -->
   <main>
     <!-- Teacher Dashboard -->
-    <section id="teacher-dashboard" class="dashboard hidden">
+    <section id="teacher-dashboard" class="dashboard hidden"> <!-- Hidden by default -->
       <aside class="sidebar">
-        <h3>Villiers Portal</h3>
-        <div class="profile-box">Teacher Name</div>
-        <nav>
+        <h3>Villiers Portal</h3> <!-- Sidebar title -->
+        <div class="profile-box">Teacher Name</div> <!-- Profile info -->
+        <nav> <!-- Sidebar navigation -->
           <a href="#">Dashboard</a>
-          <a class="active" href="#" id="club-management-link">Club Management</a>
+          <a class="active" href="#" id="club-management-link">Club Management</a> <!-- Active link -->
           <a href="#">Contacts/Reports</a>
           <a href="#">Events</a>
           <a href="#">Settings</a>
@@ -69,8 +69,8 @@
         <div class="dashboard-panels">
           <div class="panel attendance-register">
             <h3>Attendance Register</h3>
-            <form id="attendance-form">
-              <div class="scrollable-container">
+            <form id="attendance-form"> <!-- Attendance form -->
+              <div class="scrollable-container"> <!-- Scrollable list of students -->
                 <div class="student-name">
                   <label><input type="checkbox" name="student1"> John Doe</label>
                 </div>
@@ -132,22 +132,22 @@
                   <label><input type="checkbox" name="student20"> Henry Green</label>
                 </div>
               </div>
-              <button type="submit">Submit Attendance</button>
+              <button type="submit">Submit Attendance</button> <!-- Submit button -->
             </form>
           </div>
           <div class="panel chart">
             <h3>Attendance Chart</h3>
-            <canvas id="teacherChart"></canvas>
+            <canvas id="teacherChart"></canvas> <!-- Chart.js canvas -->
           </div>
         </div>
     </section>
 
     <!-- Student Dashboard -->
-    <section id="student-dashboard" class="dashboard hidden">
+    <section id="student-dashboard" class="dashboard hidden"> <!-- Hidden by default -->
       <aside class="sidebar student">
-        <h3>Villiers Portal</h3>
+        <h3>Villiers Portal</h3> <!-- Sidebar title -->
         <nav>
-          <a class="active" href="#">🏠</a>
+          <a class="active" href="#">🏠</a> <!-- Active home icon -->
           <a href="#">🎬</a>
           <a href="#">📅</a>
           <a href="#">💬</a>
@@ -155,7 +155,7 @@
         </nav>
       </aside>
       <div class="dashboard-content student-content">
-        <h2>Hello, Username 👋</h2>
+        <h2>Hello, Username 👋</h2> <!-- Greeting -->
         <p>Welcome back, hope you had a great day! Get ready to continue your activities.</p>
         <div class="activities">
           <div class="activity-card">
@@ -171,16 +171,16 @@
         </div>
         <div class="student-announcements">
           <h3>Important Daily Announcements</h3>
-          <div class="announcement-placeholder">📷</div>
+          <div class="announcement-placeholder">📷</div> <!-- Placeholder for announcements -->
         </div>
         <div class="panel chart">
           <h3>Attendance Chart</h3>
-          <canvas id="studentChart"></canvas>
+          <canvas id="studentChart"></canvas> <!-- Chart.js canvas -->
         </div>
       </div>
     </section>
   </main>
 
-  <script src="home.js"></script>
+  <script src="home.js"></script> <!-- Link to home.js script -->
 </body>
 </html>

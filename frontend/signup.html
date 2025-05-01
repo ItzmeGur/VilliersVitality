@@ -1,18 +1,18 @@
-<!-- signup.html -->
-<!DOCTYPE html>
-<html lang="en">
+<!-- signup.html --> <!-- Signup page document -->
+<!DOCTYPE html> <!-- Document type declaration -->
+<html lang="en"> <!-- Root element with language attribute -->
 <head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="signup.css">
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <title>Sign Up</title> <!-- Page title -->
+  <link rel="stylesheet" href="signup.css"> <!-- Link to stylesheet -->
 </head>
 
-<header>
+<header> <!-- Page header -->
   <div class="logo-container"> 
-    <h2 class="logo">VilliersVitality</h2>
-    <p class="tagline"><strong>For life, not school, we learn</strong></p>
+    <h2 class="logo">VilliersVitality</h2> <!-- Site logo -->
+    <p class="tagline"><strong>For life, not school, we learn</strong></p> <!-- Tagline -->
   </div>
-  <nav class="navigation">
+  <nav class="navigation"> <!-- Main navigation -->
     <div class="nav-links">
       <a href="login.html">Login</a>
       <a href="home.html">Home</a>
@@ -23,9 +23,9 @@
   </nav>
 </header>
 
-<body>
-  <div class="signup-wrapper">
-    <div class="info-panel">
+<body> <!-- Page body -->
+  <div class="signup-wrapper"> <!-- Wrapper for signup content -->
+    <div class="info-panel"> <!-- Panel with upcoming events -->
       <h3>Upcoming Events & Challenges</h3>
       <div class="event-card">
         <h4>🏃Spring Term Fitness Club - April 22nd</h4>
@@ -42,45 +42,45 @@
       </div>
     </div>
     
-    <div class="form-panel">
+    <div class="form-panel"> <!-- Signup form panel -->
       <h2>Get Started Now</h2>
       <p> Fill in your details to create a new account.</p>
 
-      <form id="signupForm">
-        <div class="name-fields">
+      <form id="signupForm"> <!-- Signup form -->
+        <div class="name-fields"> <!-- Name input fields -->
           <input type="text" placeholder="First name" id="firstName">
           <input type="text" placeholder="Last name" id="lastName">
         </div>
 
-        <div class="email-field">
+        <div class="email-field"> <!-- Username input with domain -->
           <input type="text" placeholder="Username" id="emailUsername">
           <span class="email-domain">@villiers.ealing.sch.uk</span>
         </div>
 
-        <div id="emailErrorPopup" class="email-error-popup" style="display:none;">
+        <div id="emailErrorPopup" class="email-error-popup" style="display:none;"> <!-- Hidden error popup -->
           Go to admin and ask them to change password.
         </div>
 
-        <div class="password-fields">
-<input type="password" placeholder="Enter password" id="newPassword">
+        <div class="password-fields"> <!-- Password input fields -->
+          <input type="password" placeholder="Enter password" id="newPassword">
           <input type="password" placeholder="Confirm password" id="confirmPassword">
         </div>
 
-<p class="password-tip">Use 8 or more characters with a mix of letters, numbers & symbols</p>
-<p id="passwordStrength" class="password-strength">Password strength: </p>
+        <p class="password-tip">Use 8 or more characters with a mix of letters, numbers & symbols</p> <!-- Password tip -->
+        <p id="passwordStrength" class="password-strength">Password strength: </p> <!-- Password strength indicator -->
 
-        <div class="show-password">
+        <div class="show-password"> <!-- Show password checkbox -->
           <input type="checkbox" id="showPassword">
           <label for="showPassword">Show password</label>
         </div>
 
-        <div class="actions">
-          <a href="login.html" class="signin-link">Sign in Instead</a>
-          <button type="submit">Next</button>
+        <div class="actions"> <!-- Form actions -->
+          <a href="login.html" class="signin-link">Sign in Instead</a> <!-- Link to login -->
+          <button type="submit">Next</button> <!-- Submit button -->
         </div>
       </form>
     </div>
   </div>
-  <script src="signup.js"></script>
+  <script src="signup.js"></script> <!-- Link to signup.js script -->
 </body>
 </html>

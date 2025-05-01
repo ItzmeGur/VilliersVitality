@@ -1,52 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Root element with language set to English -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Villiers Vitality - Courses</title>
-  <link rel="stylesheet" href="courses.css" />
+  <meta charset="UTF-8" /> <!-- Sets character encoding to UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures responsive design on all devices -->
+  <title>Villiers Vitality - Courses</title> <!-- Sets the title shown in the browser tab -->
+  <link rel="stylesheet" href="courses.css" /> <!-- Links the external CSS file for styling -->
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="logo-container">
-      <h2 class="logo">VilliersVitality</h2>
-      <p class="tagline"><strong>For life, not school, we learn</strong></p>
+  <header> <!-- Main navigation/header section -->
+    <div class="logo-container"> <!-- Container for logo and tagline -->
+      <h2 class="logo">VilliersVitality</h2> <!-- Site logo -->
+      <p class="tagline"><strong>For life, not school, we learn</strong></p> <!-- Tagline beneath the logo -->
     </div>
-    <nav class="navigation">
-      <a href="home.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="events.html">Events</a>
-      <a href="about.html">About us</a>
+    <nav class="navigation"> <!-- Navigation links -->
+      <a href="home.html">Home</a> <!-- Link to Home page -->
+      <a href="courses.html">Courses</a> <!-- Link to Courses page (current page) -->
+      <a href="events.html">Events</a> <!-- Link to Events page -->
+      <a href="about.html">About us</a> <!-- Link to About Us page -->
     </nav>
   </header>
 
-  <main>
+  <main> <!-- Main content area of the page -->
     <!-- Teacher View -->
-    <section id="teacher-view" class="dashboard hidden">
+    <section id="teacher-view" class="dashboard hidden"> <!-- Hidden section for teachers, shown conditionally -->
       <div class="teacher-header">
       </div>
       <div id="my-classes" class="dashboard-row">
-        <!-- Teacher's classes will be dynamically inserted here -->
+        <!-- Teacher's classes will be dynamically inserted here --> <!-- Placeholder for teacher’s club/class items -->
       </div>
       <div id="other-clubs" class="dashboard-row">
-        <!-- Other clubs will be dynamically inserted here -->
+        <!-- Other clubs will be dynamically inserted here --> <!-- Placeholder for extra clubs teachers can see -->
       </div>
     </section>
 
     <!-- Student View -->
-    <section id="student-view" class="dashboard hidden">
-      <h1>My Clubs</h1>
+    <section id="student-view" class="dashboard hidden"> <!-- Hidden section for students, shown conditionally -->
+      <h1>My Clubs</h1> <!-- Title for student’s joined clubs -->
       <div id="my-clubs-list" class="dashboard-row">
-        <!-- Clubs the student has joined will be dynamically inserted here -->
+        <!-- Clubs the student has joined will be dynamically inserted here --> <!-- Dynamic club data for student -->
       </div>
-      <h1>Available Clubs</h1>
+      <h1>Available Clubs</h1> <!-- Title for clubs the student can still join -->
       <div id="available-clubs-list" class="dashboard-row">
-        <!-- Clubs available for the student to join will be dynamically inserted here -->
+        <!-- Clubs available for the student to join will be dynamically inserted here --> <!-- Dynamic club list for joining -->
       </div>
     </section>
   </main>
 
-  <script src="courses.js"></script>
+  <script src="courses.js"></script> <!-- External JavaScript file to handle dashboard logic -->
 </body>
 </html>

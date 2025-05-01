@@ -1,46 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  function getUserRole() {
+document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to fully load before running the script
+  function getUserRole() { // Function to get the current user's role (teacher or student)
     return 'teacher';
   }
 
+  const userRole = getUserRole(); // Get the current user's role
+  const teacherView = document.getElementById('teacher-view'); // Teacher view container element
+  const studentView = document.getElementById('student-view'); // Student view container element
 
-
-
-  const userRole = getUserRole();
-  const teacherView = document.getElementById('teacher-view');
-  const studentView = document.getElementById('student-view');
-
-
-
-
-  let myClubs = JSON.parse(localStorage.getItem('myClubs')) || [
+  let myClubs = JSON.parse(localStorage.getItem('myClubs')) || [ // Load user's clubs from localStorage or use default
     { name: 'Chess Club', description: 'Join us to play and learn chess strategies.', time: 'Wednesdays 3-4pm', location: 'Room 101' },
     { name: 'Science Club', description: 'Explore exciting science experiments and projects.', time: 'Fridays 2-3pm', location: 'Lab 3' }
   ];
 
-
-
-
-  if (userRole === 'teacher') {
+  if (userRole === 'teacher') { // Show teacher view and hide student view
     teacherView.classList.remove('hidden');
     studentView.classList.add('hidden');
 
+    const otherClubsDiv = document.getElementById('other-clubs'); // Container for clubs display
+    const teacherHeader = document.querySelector('.teacher-header'); // Header section for teacher controls
 
-
-
-    const otherClubsDiv = document.getElementById('other-clubs');
-    const teacherHeader = document.querySelector('.teacher-header');
-
-
-
-
-    const spacer = document.createElement('div');
+    const spacer = document.createElement('div'); // Spacer div for layout
     spacer.style.flexGrow = '1';
 
-
-
-
-  const createClassBtn = document.createElement('button');
+  const createClassBtn = document.createElement('button'); // Button to create new club
   createClassBtn.id = 'create-class-btn';
   createClassBtn.textContent = 'Create';
   createClassBtn.style.marginTop = '10px';
@@ -53,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createClassBtn.style.fontWeight = '600';
 
   // Create Delete Button
-  const deleteClassBtn = document.createElement('button');
+  const deleteClassBtn = document.createElement('button'); // Button to toggle delete mode
   deleteClassBtn.id = 'delete-class-btn';
   deleteClassBtn.textContent = 'Delete';
   deleteClassBtn.style.marginTop = '10px';
@@ -66,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
   deleteClassBtn.style.cursor = 'pointer';
   deleteClassBtn.style.fontWeight = '600';
 
-  let deleteMode = false;
+  let deleteMode = false; // Flag to track if delete mode is active
 
-  deleteClassBtn.addEventListener('click', () => {
+  deleteClassBtn.addEventListener('click', () => { // Toggle delete mode on button click
     deleteMode = !deleteMode;
     if (deleteMode) {
       deleteClassBtn.style.backgroundColor = 'darkred';
@@ -81,17 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTeacherClubs();
   });
 
-  teacherHeader.style.display = 'flex';
-  teacherHeader.style.alignItems = 'center';
+  teacherHeader.style.display = 'flex'; // Set header layout to flexbox
+  teacherHeader.style.alignItems = 'center'; // Align items vertically center
 
-  createClassBtn.addEventListener('click', () => {
+  createClassBtn.addEventListener('click', () => { // Show popup to create a new club
     showCreateClubPopup();
   });
 
-
-
-
-  function renderTeacherClubs() {
+  function renderTeacherClubs() { // Render the teacher's clubs and available clubs
     otherClubsDiv.innerHTML = '';
 
     // Create container for My Clubs
@@ -134,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       div.appendChild(timeElem);
       div.appendChild(locationElem);
 
-      if (deleteMode) {
+      if (deleteMode) { // If delete mode is active, make club items clickable for deletion
         div.style.cursor = 'pointer';
         div.addEventListener('click', () => {
           showConfirmationPopup(div, `Are you sure you want to delete the club "${club.name}"?`, () => {
@@ -161,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         });
       } else {
-        div.style.cursor = 'default';
+        div.style.cursor = 'default'; // Normal cursor when not in delete mode
       }
 
       myClubsContainer.appendChild(div);
@@ -221,10 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     otherClubsDiv.appendChild(availableClubsContainer);
   }
 
-
-
-
-    function showCreateClubPopup() {
+    function showCreateClubPopup() { // Show popup form to create a new club
       const overlay = document.createElement('div');
       overlay.style.position = 'fixed';
       overlay.style.top = '0';
@@ -233,9 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.style.height = '100vh';
       overlay.style.backgroundColor = 'rgba(0,0,0,0.3)';
       overlay.style.zIndex = '1000';
-
-
-
 
       const popup = document.createElement('div');
       popup.style.position = 'absolute';
@@ -251,15 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
       popup.style.left = '50%';
       popup.style.transform = 'translate(-50%, -50%)';
 
-
-
-
       const form = document.createElement('form');
 
-
-
-
-      const nameInput = document.createElement('input');
+      const nameInput = document.createElement('input'); // Input for club name
       nameInput.type = 'text';
       nameInput.placeholder = 'Club Name';
       nameInput.required = true;
@@ -268,10 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nameInput.style.width = '100%';
       form.appendChild(nameInput);
 
-
-
-
-      const limitInput = document.createElement('input');
+      const limitInput = document.createElement('input'); // Input for club member limit
       limitInput.type = 'number';
       limitInput.placeholder = 'Limit';
       limitInput.required = true;
@@ -280,10 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
       limitInput.style.width = '100%';
       form.appendChild(limitInput);
 
-
-
-
-      const whenInput = document.createElement('input');
+      const whenInput = document.createElement('input'); // Input for club time
       whenInput.type = 'text';
       whenInput.placeholder = 'Time';
       whenInput.required = true;
@@ -292,10 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
       whenInput.style.width = '100%';
       form.appendChild(whenInput);
 
-
-
-
-      const whereInput = document.createElement('input');
+      const whereInput = document.createElement('input'); // Input for club location
       whereInput.type = 'text';
       whereInput.placeholder = 'Location';
       whereInput.required = true;
@@ -304,10 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       whereInput.style.width = '100%';
       form.appendChild(whereInput);
 
-
-
-
-      const descInput = document.createElement('textarea');
+      const descInput = document.createElement('textarea'); // Input for club description
       descInput.placeholder = 'Description';
       descInput.required = true;
       descInput.style.display = 'block';
@@ -316,10 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
       descInput.style.height = '60px';
       form.appendChild(descInput);
 
-
-
-
-      const submitBtn = document.createElement('button');
+      const submitBtn = document.createElement('button'); // Submit button for form
       submitBtn.type = 'submit';
       submitBtn.textContent = 'Create';
       submitBtn.style.marginTop = '10px';
@@ -332,10 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.style.fontWeight = '600';
       form.appendChild(submitBtn);
 
-
-
-
-      const cancelBtn = document.createElement('button');
+      const cancelBtn = document.createElement('button'); // Cancel button for form
       cancelBtn.type = 'button';
       cancelBtn.textContent = 'Cancel';
       cancelBtn.style.marginTop = '10px';
@@ -349,22 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
       cancelBtn.style.fontWeight = '600';
       form.appendChild(cancelBtn);
 
-
-
-
-      cancelBtn.addEventListener('click', () => {
+      cancelBtn.addEventListener('click', () => { // Remove popup on cancel
         document.body.removeChild(overlay);
       });
 
-
-
-
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', (e) => { // Handle form submission
         e.preventDefault();
         console.log("Form submitted");
-
-
-
 
         try {
           if (!nameInput.value.trim() || !limitInput.value || !whenInput.value.trim() || !whereInput.value.trim() || !descInput.value.trim()) {
@@ -386,9 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('availableClubs', JSON.stringify(availableClubs));
           }
 
-
-
-
           renderTeacherClubs();
           document.body.removeChild(overlay);
         } catch (error) {
@@ -396,37 +333,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-
-
-
       popup.appendChild(form);
       overlay.appendChild(popup);
       document.body.appendChild(overlay);
     }
 
-
-
-
     teacherHeader.appendChild(spacer);
     teacherHeader.appendChild(createClassBtn);
     teacherHeader.appendChild(deleteClassBtn);
 
-
-
-
     renderTeacherClubs();
 
-
-
-
-  } else if (userRole === 'student') {
+    } else if (userRole === 'student') { // Show student view and hide teacher view
     studentView.classList.remove('hidden');
     teacherView.classList.add('hidden');
 
-
-
-
-    // Original 5 clubs as default
+    // Original 5 clubs as default data for students
     const originalMyClubs = [
       { name: 'Chess Club', description: 'Join us to play and learn chess strategies.', time: 'Wednesdays 3-4pm', location: 'Room 101' },
       { name: 'Science Club', description: 'Explore exciting science experiments and projects.', time: 'Fridays 2-3pm', location: 'Lab 3' }
@@ -437,51 +359,31 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: 'Art Club', description: 'Unleash your creativity with various art forms.', time: 'Tuesdays 2-3pm', location: 'Art Studio' }
     ];
 
-
-
-
+    // Load clubs from localStorage or use original defaults
     let myClubs = JSON.parse(localStorage.getItem('myClubs')) || originalMyClubs;
     let availableClubs = JSON.parse(localStorage.getItem('availableClubs')) || originalAvailableClubs;
 
+    const myClubsList = document.getElementById('my-clubs-list'); // Container for student's clubs
+    const availableClubsList = document.getElementById('available-clubs-list'); // Container for available clubs
 
-
-
-    const myClubsList = document.getElementById('my-clubs-list');
-    const availableClubsList = document.getElementById('available-clubs-list');
-
-
-
-
-    function saveClubsToStorage() {
+    function saveClubsToStorage() { // Save current clubs to localStorage
       localStorage.setItem('myClubs', JSON.stringify(myClubs));
       localStorage.setItem('availableClubs', JSON.stringify(availableClubs));
     }
 
-
-
-
-    function createClubItem(club, isAvailable) {
+    function createClubItem(club, isAvailable) { // Create DOM element for a club item
       const div = document.createElement('div');
       div.className = 'club-item';
-
-
-
 
       const nameElem = document.createElement('h3');
       nameElem.textContent = club.name;
       nameElem.style.marginBottom = '8px';
-
-
-
 
       const descElem = document.createElement('p');
       descElem.textContent = club.description;
       descElem.style.fontWeight = 'normal';
       descElem.style.fontSize = '0.9em';
       descElem.style.color = '#555';
-
-
-
 
       const timeElem = document.createElement('p');
       timeElem.textContent = `Time: ${club.time}`;
@@ -490,27 +392,18 @@ document.addEventListener('DOMContentLoaded', () => {
       timeElem.style.color = '#777';
       timeElem.style.marginTop = '6px';
 
-
-
-
       const locationElem = document.createElement('p');
       locationElem.textContent = `Location: ${club.location}`;
       locationElem.style.fontWeight = 'normal';
       locationElem.style.fontSize = '0.85em';
       locationElem.style.color = '#777';
 
-
-
-
       div.appendChild(nameElem);
       div.appendChild(descElem);
       div.appendChild(timeElem);
       div.appendChild(locationElem);
 
-
-
-
-      if (isAvailable) {
+      if (isAvailable) { // If club is available, add Join button
         const joinBtn = document.createElement('button');
         joinBtn.textContent = 'Join';
         joinBtn.style.marginTop = '10px';
@@ -527,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
           renderClubs();
         });
         div.appendChild(joinBtn);
-      } else {
+      } else { // If club is joined and user is not a teacher, add Leave button
         if (getUserRole() !== 'teacher') {
           const leaveBtn = document.createElement('button');
           leaveBtn.textContent = 'Leave';
@@ -539,10 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
           leaveBtn.style.color = 'white';
           leaveBtn.style.cursor = 'pointer';
 
-
-
-
-          function showConfirmationPopup(parentDiv, message, onConfirm, onCancel) {
+          function showConfirmationPopup(parentDiv, message, onConfirm, onCancel) { // Show confirmation popup dialog
             const overlay = document.createElement('div');
             overlay.style.position = 'fixed';
             overlay.style.top = '0';
@@ -551,9 +441,6 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.style.height = '100vh';
             overlay.style.backgroundColor = 'rgba(0,0,0,0.3)';
             overlay.style.zIndex = '1000';
-
-
-
 
             const popup = document.createElement('div');
             popup.style.position = 'absolute';
@@ -566,23 +453,14 @@ document.addEventListener('DOMContentLoaded', () => {
             popup.style.width = '250px';
             popup.style.textAlign = 'center';
 
-
-
-
             const msg = document.createElement('p');
             msg.textContent = message;
             msg.style.marginBottom = '15px';
             popup.appendChild(msg);
 
-
-
-
             const buttonsDiv = document.createElement('div');
             buttonsDiv.style.display = 'flex';
             buttonsDiv.style.justifyContent = 'space-around';
-
-
-
 
             const yesBtn = document.createElement('button');
             yesBtn.textContent = 'Yes';
@@ -597,9 +475,6 @@ document.addEventListener('DOMContentLoaded', () => {
               onConfirm();
             });
 
-
-
-
             const noBtn = document.createElement('button');
             noBtn.textContent = 'No';
             noBtn.style.padding = '6px 12px';
@@ -613,29 +488,17 @@ document.addEventListener('DOMContentLoaded', () => {
               if (onCancel) onCancel();
             });
 
-
-
-
             buttonsDiv.appendChild(yesBtn);
             buttonsDiv.appendChild(noBtn);
             popup.appendChild(buttonsDiv);
 
-
-
-
             overlay.appendChild(popup);
             document.body.appendChild(overlay);
-
-
-
 
             const parentRect = parentDiv.getBoundingClientRect();
             const popupRect = popup.getBoundingClientRect();
             popup.style.top = `${parentRect.top + window.scrollY + (parentRect.height - popupRect.height) / 2}px`;
             popup.style.left = `${parentRect.left + window.scrollX + (parentRect.width - popupRect.width) / 2}px`;
-
-
-
 
             overlay.addEventListener('click', (e) => {
               if (e.target === overlay) {
@@ -645,10 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
 
-
-
-
-          leaveBtn.addEventListener('click', () => {
+          leaveBtn.addEventListener('click', () => { // Handle leave button click with confirmation
             showConfirmationPopup(div, 'Are you sure you want to leave this club?', () => {
               myClubs = myClubs.filter(c => c.name !== club.name);
               availableClubs.push(club);
@@ -657,28 +517,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           });
 
-
-
-
           div.appendChild(leaveBtn);
         }
 
-
-
-
-        div.addEventListener('click', (event) => {
+        div.addEventListener('click', (event) => { // Show detailed club popup on div click (excluding buttons)
           if (event.target.tagName === 'BUTTON') return;
-
-
-
 
           const existingOverlay = document.querySelector('.custom-club-popup-overlay');
           if (existingOverlay) {
             document.body.removeChild(existingOverlay);
           }
-
-
-
 
           const overlay = document.createElement('div');
           overlay.className = 'custom-club-popup-overlay';
@@ -693,9 +541,6 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.justifyContent = 'center';
           overlay.style.alignItems = 'center';
 
-
-
-
           const popup = document.createElement('div');
           popup.style.backgroundColor = 'white';
           popup.style.borderRadius = '10px';
@@ -706,9 +551,6 @@ document.addEventListener('DOMContentLoaded', () => {
           popup.style.position = 'relative';
           popup.style.display = 'flex';
           popup.style.flexDirection = 'column';
-
-
-
 
           const closeBtn = document.createElement('button');
           closeBtn.textContent = '×';
@@ -731,23 +573,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.removeChild(overlay);
           });
 
-
-
-
           const content = document.createElement('div');
           content.style.flex = '1';
           content.style.overflowY = 'auto';
-
-
-
 
           const title = document.createElement('h2');
           title.textContent = club.name;
           title.style.color = 'rgb(177, 31, 54)';
           title.style.marginBottom = '15px';
-
-
-
 
           const description = document.createElement('p');
           description.textContent = club.description;
@@ -756,18 +589,12 @@ document.addEventListener('DOMContentLoaded', () => {
           description.style.lineHeight = '1.4';
           description.style.marginBottom = '10px';
 
-
-
-
           const time = document.createElement('p');
           time.textContent = `Time: ${club.time}`;
           time.style.fontSize = '1.1em';
           time.style.color = '#333';
           time.style.lineHeight = '1.4';
           time.style.marginBottom = '10px';
-
-
-
 
           const location = document.createElement('p');
           location.textContent = `Location: ${club.location}`;
@@ -776,16 +603,10 @@ document.addEventListener('DOMContentLoaded', () => {
           location.style.lineHeight = '1.4';
           location.style.marginBottom = '10px';
 
-
-
-
           content.appendChild(title);
           content.appendChild(description);
           content.appendChild(time);
           content.appendChild(location);
-
-
-
 
           popup.appendChild(closeBtn);
           popup.appendChild(content);
@@ -793,51 +614,29 @@ document.addEventListener('DOMContentLoaded', () => {
           document.body.appendChild(overlay);
         });
 
-
-
-
       }
-
-
-
-
       return div;
     }
 
-
-
-
-    function renderClubs() {
+    function renderClubs() { // Render all clubs for student view
       myClubsList.innerHTML = '';
       availableClubsList.innerHTML = '';
-
-
-
 
       myClubs.forEach(club => {
         myClubsList.appendChild(createClubItem(club, false));
       });
-
-
-
 
       availableClubs.forEach(club => {
         availableClubsList.appendChild(createClubItem(club, true));
       });
     }
 
-
-
-
-    function reloadClubsFromStorage() {
+    function reloadClubsFromStorage() { // Reload clubs from localStorage and render
       myClubs = JSON.parse(localStorage.getItem('myClubs')) || [];
       availableClubs = JSON.parse(localStorage.getItem('availableClubs')) || [];
       renderClubs();
     }
 
-
-
-
-    renderClubs();
+    renderClubs(); // Initial render of clubs
   }
 });

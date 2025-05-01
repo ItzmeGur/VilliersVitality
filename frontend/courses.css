@@ -1,146 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); /* Import Poppins font from Google Fonts */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element width/height */
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
 }
 
 /* Body Styling */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: white;
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    background-color: white; /* Set background color */
 }
 
 /* Header */
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: rgb(19, 36, 96);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
+    position: absolute; /* Position header absolutely at top */
+    top: 0; /* Align to top of page */
+    left: 0; /* Align to left edge */
+    width: 100%; /* Full width */
+    padding: 20px 100px; /* Top-bottom and left-right padding */
+    background: rgb(19, 36, 96); /* Dark blue background */
+    display: flex; /* Flex layout for child elements */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center items */
+    z-index: 99; /* Keep header above other elements */
 }
 
 /* Logo & Tagline */
 .logo-container {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Flex layout for logo and tagline */
+    flex-direction: column; /* Stack vertically */
 }
 
 .logo {
-    font-size: 2em;
-    color: rgb(177, 31, 54);
-    user-select: none;
+    font-size: 2em; /* Large font for logo */
+    color: rgb(177, 31, 54); /* Red color */
+    user-select: none; /* Prevent text selection */
 }
 
 .tagline {
-    font-size: 0.8em; 
-    font-weight: 400; 
-    color: white; 
-    margin-top: -5px; 
+    font-size: 0.8em;  /* Smaller text for tagline */
+    font-weight: 400;  /* Regular weight */
+    color: white;  /* White text color */
+    margin-top: -5px;  /* Slightly move up to reduce gap */
 }
 
 /* Navigation */
 .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
+    display: flex; /* Flex layout for nav links */
+    align-items: center; /* Vertically align links */
+    justify-content: space-between; /* Distribute space evenly */
+    width: 50%; /* Navigation takes half the header width */
 }
 
 .navigation a {
-    font-size: 1.1em;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    margin: 0 15px;
+    font-size: 1.1em; /* Slightly larger text */
+    color: white; /* White link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Medium weight */
+    position: relative; /* Required for hover underline effect */
+    margin: 0 15px; /* Space between links */
 }
 
 .navigation a::after {
-    content: '';
-    position: absolute;
+    content: ''; /* Pseudo-element for underline */
+    position: absolute; /* Position relative to link */
     left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: transform .5s;
+    bottom: -6px; /* Place below the text */
+    width: 100%; /* Full width underline */
+    height: 3px; /* Thickness of underline */
+    background: white; /* White underline */
+    border-radius: 5px; /* Rounded edges */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform .5s; /* Smooth transition */
 }
 
 .navigation a:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Expand underline on hover */
 }
 
 /* Club item box style */
 .club-item {
-    display: inline-block;
-    width: 280px;
-    min-height: 100px;
-    padding: 20px 25px;
-    margin: 12px;
-    border-radius: 10px;
-    background-color: #f5f7fa;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
-    color: rgb(19, 36, 96);
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    vertical-align: top;
+    display: inline-block; /* Allow horizontal stacking */
+    width: 280px; /* Fixed width */
+    min-height: 100px; /* Minimum height for uniformity */
+    padding: 20px 25px; /* Inner spacing */
+    margin: 12px; /* Outer spacing */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f5f7fa; /* Light background */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-weight: 600; /* Bold text */
+    color: rgb(19, 36, 96); /* Dark blue text */
+    cursor: pointer; /* Pointer cursor on hover */
+    user-select: none; /* Prevent selection */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    vertical-align: top; /* Align top when stacked inline */
 }
 
 .club-item:hover {
-    background-color: #e0e6f0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #e0e6f0; /* Light blue-gray on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .club-item:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Slightly darker hover color (overrides above) */
 }
 
 /* Join button style */
 .club-item button {
-    margin-top: 10px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(177, 31, 54);
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above button */
+    padding: 6px 12px; /* Padding inside button */
+    border: none; /* No border */
+    border-radius: 4px; /* Slightly rounded corners */
+    background-color: rgb(177, 31, 54); /* Red background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: 600; /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .club-item button:hover {
-    background-color: rgb(150, 25, 40);
+    background-color: rgb(150, 25, 40); /* Darker red on hover */
 }
 
 /* Space between My Clubs and Available Clubs sections */
 #my-clubs-list {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Adds spacing below section */
 }
 
 /* Align club lists to the left */
 #my-clubs-list,
 #available-clubs-list {
-    text-align: left;
+    text-align: left; /* Align text and items to the left */
 }
 
 /* Override body flex alignment for main content */
 main {
-    width: 100%;
-    margin: 120px 0 40px 0; /* top margin to avoid header overlap, no horizontal centering */
-    padding: 0 20px;
+    width: 100%; /* Full width container */
+    margin: 120px 0 40px 0; /* Top margin prevents overlap with header */
+    padding: 0 20px; /* Horizontal padding */
 }
